@@ -339,7 +339,6 @@ input#search_bar{
     font-size: 20px;
     font-weight: 200;
     color: #eee;
-    font-family: 'pretendard';
 }
 input#search_bar::placeholder {
     color: #eee;

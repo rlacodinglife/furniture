@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/furniture/css/reset.css">
+    <link rel="stylesheet" href="/furniture/css/common.css">
+    <link rel="stylesheet" href="/furniture/css/main.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js'></script> 
+    <!-- gsap scrollTrigger 라이브러리 적용 (cdn.js 검색시 gsap 항목으로 들어가서 검색)-->  
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+    <!--axios 라이브러리 링크 -->
+    <title>furniture</title>
+    <script src="/furniture/js/search.js"></script>
+    <script src="/furniture/js/nav.js"></script>
+    <script src="/furniture/js/visual.js"></script>
+    <script src="/furniture/js/contents.js"></script>
+    <!-- <script src="/furniture/js/scrollbar.js"></script> -->
+    </head>
+    <body>
+    <!--skipmenu-->
+    <ul id="skipmenu_list">
+        <li><a class="hidden" href="#">상단메뉴 바로가기</a></li>
+        <li><a class="hidden" href="#">본문 바로가기</a></li>
+        <li><a class="hidden" href="#">하단메뉴 바로가기</a></li>
+    </ul>
+    <header>
+        <h1><a href="/furniture/index.html"><img src="/furniture/images/logo.png" alt="로고"></a></h1>
+        <nav id="mainmenu">
+            <h2 class="hidden">메인메뉴</h2>
+            <ul id="mainmenu_list">
+                <li><a href="/furniture/best/best.html">베스트</a></li>
+                <li><a href="#">세일상품</a></li>
+                <li><a href="#">브랜드</a></li>
+                <li><a href="#">매거진</a></li>
+                <li><a href="#">프로모션</a></li>
+                <li><a href="#">온라인쇼룸</a></li>
+            </ul>
+        </nav>
+        <nav id="mymenu">
+            <h2 class="hidden">개인메뉴</h2>
+            <ul id="mymenu_list">
+                <li><a href="#" id="search_open_btn"><img src="/furniture/images/icon_search.png" alt="검색"></a></li>
+                <li><a href="#"><img src="/furniture/images/icon_my.png" alt="마이메뉴"></a></li>
+                <li><a href="#"><img src="/furniture/images/icon_cart.png" alt="장바구니"></a></li>
+            </ul>
+        </nav>
+        <div id="language">
+            <ul id="language_list">
+                <li><a href="#">KR</a></li>
+                <li>|</li>
+                <li><a href="#">EN</a></li>
+            </ul>
+        </div>   
+        <button id="menu_btn"><i class="fa-solid fa-bars"></i></button>
+        <nav id="item_menu">
+            <h2 class="hidden">전체메뉴</h2>
+            <ul id="item_menu_list">
+                <button id="item_close_btn"><i class="fa-solid fa-xmark"></i></button>
+                <li><a href="#">전체가구</a></li>
+                <li><a href="#">침실가구</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">홈인테리어</a></li>
+                        <li><a href="#">호텔침대</a></li>
+                        <li><a href="#">매트리스</a></li>
+                        <li><a href="#">모션베드</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">거실가구</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">테이블</a></li>
+                        <li><a href="#">거실장</a></li>
+                        <li><a href="#">소파</a></li>
+                        <li><a href="#">수납장</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">주방가구</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">식탁</a></li>
+                        <li><a href="#">수납장</a></li>
+                        <li><a href="#">의자</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">서재가구</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">책상</a></li>
+                        <li><a href="#">책장</a></li>
+                        <li><a href="#">서랍장</a></li>
+                        <li><a href="#">의자</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">유아/키즈</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">침대</a></li>
+                        <li><a href="#">책상</a></li>
+                        <li><a href="#">소파</a></li>
+                        <li><a href="#">놀이장</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">옷장/수납장</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">옷장</a></li>
+                        <li><a href="#">수납장</a></li>
+                        <li><a href="#">리빙박스</a></li>
+                        <li><a href="#">신발장</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">홈인테리어</a>
+                    <ul class="item_submenu_list">
+                        <li><a href="#">조명</a></li>
+                        <li><a href="#">식물</a></li>
+                        <li><a href="#">홈갤러리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="search">
+            <form action="get">
+                <input id="search_bar" type="text" placeholder="2024 F/W 이달의 매거진 바로가기">
+                <button id="search_btn"><img src="/furniture/images/icon_search.png" alt="검색"></button>
+            </form>
+            <div id="search_inner">
+                <ul id="tag_list">
+                    <li><a href="#">#거실장</a></li>
+                    <li><a href="#">#서랍장</a></li>
+                    <li><a href="#">#책상</a></li>
+                    <li><a href="#">#소파</a></li>
+                </ul>
+            </div>
+            <button id="search_close_btn"><img src="/furniture/images/search_close_btn.png" alt="검색창닫기"></button>
+        </div>
+    </header>
+    <section id="visual">
+        <ul id="visual_list">
+            <li>
+                <p class="visual_title">선잠 없이 포근하고 편안한 곳</p>
+                <p class="visual_text">루스카니 로스던 프리미엄 베드로 수면의 질을 높여보세요</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">조명이 주는 기쁨</p>
+                <p class="visual_text">공간과 조화롭게 오브제가 되는 디자인 조명으로 따스한 공간을 완성해보세요.</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">소파 컬렉션</p>
+                <p class="visual_text">섬세한 컬러 팔레트로 디자인된 다양한 소파들을 만나보세요.</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">전통적 색감의 친환경 한지 조명</p>
+                <p class="visual_text">한지 조명의 은은한 빛으로 고즈넉한 분위기를 느껴보세요.</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">LIVING ITEM</p>
+                <p class="visual_text">다양한 아이템으로<br>
+                    내 방에 색다른 변화를 시도해 보세요</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">침대, 패브릭이어도 좋다</p>
+                <p class="visual_text">고객 맞춤형으로 정교하게 제작되어 
+                    유행을 타지 않는 디자인을 갖추고 있어요.</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">나만의 의자를 찾아</p>
+                <p class="visual_text">다양한 색상을 담은 알록달록 의자,
+                    내 취향대로 골라보세요</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">색다른 공간, 아티스트 컬렉션
+                </p>
+                <p class="visual_text">심플라이프와 현대 디자인이 만난다. </p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">MD's PICK</p>
+                <p class="visual_text">모든 공간에 개성을 더  할 수 있는 심플하면서도 
+                    눈에 확 띄는 조명을 지금 만나보세요</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+            <li>
+                <p class="visual_title">공간에 소박한 매력을 더하기</p>
+                <p class="visual_text">부드러운 선으로 첫눈에 반해버리는 익숙한 디자인</p>
+                <button class="visual_btn">MORE VIEW</button>
+            </li>
+        </ul>
+        <button id="visual_prev_btn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="visual_next_btn"><i class="fa-solid fa-chevron-right"></i></button>
+        <div id="visual_bar"><p id="visual_first_index">1</p><span></span>
+            <p id="visual_last_index">10</p></div>
+    </section>
+    <section id="intro">
+        <h2 class="hidden">제품소개</h2>
+        <div id="intro_tabmenu_wrap">
+            <ul id="intro_tabmenu_list">
+              <li class="selected"><a href="#">New Arrivals</a></li>
+              <li><a href="#">MD’s Pick</a></li>
+              <li><a href="#">Time Sale</a></li>
+            </ul>
+        </div>
+        <div id="intro_panel_wrap">
+            <div id="intro_data"><!--데이터불러옴-->
+            </div>          
+              <p id="intro_index"><span id="intro_current_index">01</span> / 05</p>
+              <button id="intro_prev_btn"><img src="/furniture/images/intro_prev_btn.png" alt="이전"></button>
+              <button id="intro_next_btn">
+                <img src="/furniture/images/intro_next_btn.png" alt="다음">
+              </button>
+            </div>
+    </section>
+    <section id="banner_00">
+        <p class="banner_brand" id="banner_00_brand">브랜드명</p>
+        <p class="banner_title" id="banner_00_title">선잠 없이 포근하고 편안한 곳</p>
+        <p class="banner_text" id="banner_00_text">루스카니 로스던 프리미엄 베드로 수면의 질을 높여보세요</p>
+        <button id="banner_00_btn">MORE VIEW</button>
+    </section>
+    <section id="banner_01">
+        <img src="/furniture/images/banner_01_logo.png" alt="livingaround">
+    </section>
+    <section id="magazine">
+        <h2 class="hidden">매거진소개</h2>
+        <div id="magazine_text_wrap">
+            <p id="magazine_brand">리버앤사이드</p>
+                <p id="magazine_title">
+                   <span></span><span>색</span><span>다</span><span>른</span><span> </span><span>공</span><span>간</span><span>,</span><span> </span><span>아</span><span>티</span><span>스</span><span>트</span><span> </span><span>컬</span><span>렉</span><span>션</span>
+                </p>
+                <p id="magazine_text">
+                    <span></span><span>심</span><span>플</span><span>라</span><span>이</span><span>프</span><span>와</span><span> </span><span>현</span><span>대</span><span> </span><span>디</span><span>자</span><span>인</span><span>이</span><span> </span><span>만</span><span>나</span><span>다</span><span>.</span>
+                <br><br>
+                <span>"</span><span>예</span><span>술</span><span>가</span><span>의</span><span> </span><span>손</span><span>길</span><span>이</span><span> </span><span>닿</span><span>은</span><span> </span><span>특</span><span>별</span><span>한</span><span> </span><span>공</span><span>간</span><span>을</span><span> </span><span>만</span><span>나</span><span>보</span><span>세</span><span>요</span><span>.</span><span>"</span><span> </span><span>이</span><span>번</span><span> </span><span>컬</span><span>렉</span><span>션</span><span>은</span><span> </span><span>예</span><span>술</span><span>가</span><span>들</span><span>의</span><span> </span><span>창</span><span>의</span><span>력</span><span>과</span><span> </span><span>세</span><span>련</span><span>된</span><span> </span><span>도</span><span>시</span><span>감</span><span>성</span><span>이</span><span> </span><span>반</span><span>영</span><span>되</span><span>어</span><span> </span><span>있</span><span>습</span><span>니</span><span>다</span><span>.</span>
+                <span>아</span><span>티</span><span>스</span><span>트</span><span>가</span><span> </span><span>직</span><span>접</span><span> </span><span>선</span><span>택</span><span>한</span><span> </span><span>다</span><span>양</span><span>한</span><span> </span><span>색</span><span>의</span><span> </span><span>팔</span><span>레</span><span>트</span><span>로</span><span> </span><span>디</span><span>자</span><span>인</span><span>된</span><span> </span><span>가</span><span>구</span><span>들</span><span>로</span><span> </span><span>꾸</span><span>며</span><span>진</span><span> </span><span>이</span><span> </span><span>특</span><span>별</span><span>한</span><span> </span><span>컬</span><span>렉</span><span>션</span><span>은</span><span>,</span><span> </span><span>휴</span><span>식</span><span>을</span><span> </span><span>위</span><span>한</span><span> </span><span>아</span><span>늑</span><span>하</span><span>고</span><span> </span><span>편</span><span>안</span><span>한</span><span> </span><span>공</span><span>간</span><span>을</span><span> </span><span>만</span><span>들</span><span>기</span><span> </span><span>위</span><span>해</span><span>서</span><span> </span><span>기</span><span>존</span><span> </span><span>디</span><span>자</span><span>인</span><span>의</span><span> </span><span>가</span><span>구</span><span>들</span><span>을</span><span> </span><span>현</span><span>대</span><span>적</span><span> </span><span>감</span><span>각</span><span>으</span><span>로</span><span> </span><span>재</span><span>해</span><span>석</span><span>했</span><span>습</span><span>니</span><span>다</span><span>.</span>
+                <br><br>
+                <span>저</span><span>희</span><span> </span><span>컬</span><span>렉</span><span>션</span><span>의</span><span> </span><span>이</span><span>번</span><span> </span><span>제</span><span>품</span><span>들</span><span>은</span><span> </span><span>현</span><span>대</span><span> </span><span>예</span><span>술</span><span>의</span><span> </span><span>감</span><span>성</span><span>을</span><span> </span><span>고</span><span>스</span><span>란</span><span>히</span><span> </span><span>담</span><span>아</span><span>낸</span><span> </span><span>아</span><span>이</span><span>템</span><span>들</span><span>입</span><span>니</span><span>다</span><span>.</span><span> </span><span>바</span><span>쁜</span><span> </span><span>현</span><span>대</span><span>인</span><span>의</span><span> </span><span>쉼</span><span>터</span><span>인</span><span> </span><span>소</span><span>중</span><span>한</span><span> </span><span>공</span><span>간</span><span>을</span><span> </span><span>편</span><span>안</span><span>하</span><span>면</span><span>서</span><span> </span><span>더</span><span> </span><span>예</span><span>술</span><span>적</span><span>으</span><span>로</span><span> </span><span>변</span><span>화</span><span>시</span><span>키</span><span>기</span><span> </span><span>위</span><span>해</span><span> </span><span>연</span><span>출</span><span>되</span><span>었</span><span>습</span><span>니</span><span>다</span><span>.</span><span> </span><span>예</span><span>술</span><span>가</span><span>의</span><span> </span><span>작</span><span>업</span><span>이</span><span> </span><span>반</span><span>영</span><span>된</span><span> </span><span>독</span><span>특</span><span>한</span><span> </span><span>아</span><span>트</span><span> </span><span>피</span><span>스</span><span>들</span><span>,</span><span>
+                </span<span>예</span><span>술</span><span>적</span><span> </span><span>감</span><span>성</span><span>이</span><span> </span><span>그</span><span>대</span><span>로</span><span> </span><span>묻</span><span>어</span><span>나</span><span>는</span><span> </span><span>가</span><span>구</span><span>들</span><span>로</span><span>,</span><span> </span><span>여</span><span>러</span><span>분</span><span>의</span><span> </span><span>공</span><span>간</span><span>에</span><span> </span><span>예</span><span>술</span><span>적</span><span>인</span><span> </span><span>분</span><span>위</span><span>기</span><span>를</span><span> </span><span>불</span><span>어</span><span> </span><span>넣</span><span>을</span><span> </span><span>것</span><span>을</span><span> </span><span>제</span><span>안</span><span>합</span><span>니</span><span>다</span><span>.</span>
+                <br><br>
+                <span>섬</span><span>세</span><span>한</span><span> </span><span>컬</span><span>러</span><span> </span><span>팔</span><span>레</span><span>트</span><span>가</span><span> </span><span>특</span><span>징</span><span>인</span><span> </span><span>제</span><span>품</span><span>들</span><span>과</span><span> </span><span>현</span><span>대</span><span> </span><span>디</span><span>자</span><span>인</span><span> </span><span>트</span><span>렌</span><span>드</span><span>가</span><span> </span><span>고</span><span>스</span><span>란</span><span>히</span><span> </span><span>반</span><span>영</span><span>된</span><span> </span><span>아</span><span>이</span><span>템</span><span>들</span><span>은</span><span> </span>
+                <span>각</span><span>각</span><span>의</span><span> </span><span>디</span><span>자</span><span>인</span><span> </span><span>특</span><span>징</span><span>에</span><span> </span><span>걸</span><span>맞</span><span>게</span><span> </span><span>여</span><span>러</span><span>분</span><span>의</span><span> </span><span>공</span><span>간</span><span>을</span><span> </span><span>다</span><span>채</span><span>롭</span><span>게</span><span> </span><span>만</span><span>들</span><span>어</span><span> </span><span>낼</span><span> </span><span>것</span><span>입</span><span>니</span><span>다</span><span>.</span>
+
+                </p>
+        </div>        
+        <p id="magazine_img_00"><img src="/furniture/images/magazine_00.jpg" alt="매거진"></p>
+        <p id="magazine_img_01"><img src="/furniture/images/magazine_01.jpg" alt="매거진"></p>
+        <p id="magazine_comment">이번 컬렉션을 통해서 여러분의 공간을 아티스트의 창의력과 감성이 담겨진 특별한 공간으로 연출해 보시길 바랍니다. <br>
+            공간을 예술적인 향연으로 만드는 이번 컬렉션으로 여러분들을 초대합니다.</p>
+
+    </section>
+    <section id="collection">
+        <h2 class="hidden">콜렉션</h2>
+        <!-- <div id="collection_text"> -->
+            <p class="banner_brand">다채로움으로 공간을 편집하다</p>
+            <p class="collection_title">REMAKABLE<br>COLLECTION</p>
+            <button class="visual_btn">MORE VIEW</button>
+        <!-- </div> -->
+        <div id="collection_inner">
+            <div id="collection_img_left" class="collection_img">
+                <img src="/furniture/images/collection_00.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_01.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_02.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_00.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_01.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_02.jpg" alt="컬렉션">
+            </div>
+            <div id="collection_img_right" class="collection_img">
+                <img src="/furniture/images/collection_03.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_04.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_05.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_03.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_04.jpg" alt="컬렉션">
+                <img src="/furniture/images/collection_05.jpg" alt="컬렉션">
+    
+            </div>
+        </div> 
+    </section>
+    <section id="designer">
+        <h2 class="hidden">더보기메뉴</h2>
+        <div class="designer_inner"><a href="#">
+            <p class="designer_text">DESIGNERS</p>
+            <p class="designer_title">About Designers</p>
+            <svg class="desinger_arrow" xmlns="http://www.w3.org/2000/svg" width="253" height="22" viewBox="0 0 253 22" fill="none">
+                <path d="M0 21H250L230.277 1" stroke="#333333" stroke-width="2"/>
+                </svg>
+            </a>
+        </div>
+        <div class="designer_inner"><a href="#">
+            <p class="designer_text">PROMOTION</p>
+            <p class="designer_title">More Contents</p>
+            <svg class="desinger_arrow" xmlns="http://www.w3.org/2000/svg" width="253" height="22" viewBox="0 0 253 22" fill="none">
+                <path d="M0 21H250L230.277 1" stroke="#333333" stroke-width="2"/>
+                </svg>
+            </a>
+        </div>
+
+    </section>
+    <section id="sofa">
+        <div id="sofa_banner">
+            <p id="sofa_banner_title">라이프스타일에 맞는 다양한 소파</p>
+            <p id="sofa_banner_text">섬세한 컬러 팔레트로 디자인된 다양한 소파들을 만나보세요<br>
+                혼자만의 멈춘 생각의 여유를 나누고 싶어지는 소파</p>
+        </div>
+        <div id="sofa_inner">
+            <div id="sofa_img_wrap">
+                <ul id="sofa_img_list">
+                    <li>
+                        <p class="sofa_img"><img src="/furniture/images/sofa_00.png" alt="제품"></p>
+                        <p class="sofa_brand">리버앤사이드</p>
+                        <p class="sofa_name">감각적인 소파</p>
+                        <p class="sofa_price">267,000 원</p>
+                        <button class="sofa_more_btn">MORE VIEW</button>
+                    </li>
+                    <li>
+                        <p class="sofa_img"><img src="/furniture/images/sofa_01.png" alt="제품"></p>
+                        <p class="sofa_brand">리버앤사이드</p>
+                        <p class="sofa_name">감각적인 소파</p>
+                        <p class="sofa_price">267,000 원</p>
+                        <button class="sofa_more_btn">MORE VIEW</button>
+                    </li>
+                    <li>
+                        <p class="sofa_img"><img src="/furniture/images/sofa_02.png" alt="제품"></p>
+                        <p class="sofa_brand">리버앤사이드</p>
+                        <p class="sofa_name">감각적인 소파</p>
+                        <p class="sofa_price">267,000 원</p>
+                        <button class="sofa_more_btn">MORE VIEW</button>
+                    </li>
+                    <li>
+                        <p class="sofa_img"><img src="/furniture/images/sofa_03.png" alt="제품"></p>
+                        <p class="sofa_brand">리버앤사이드</p>
+                        <p class="sofa_name">감각적인 소파</p>
+                        <p class="sofa_price">267,000 원</p>
+                        <button class="sofa_more_btn">MORE VIEW</button>
+                    </li>
+                    <li>
+                        <p class="sofa_img"><img src="/furniture/images/sofa_04.png" alt="제품"></p>
+                        <p class="sofa_brand">리버앤사이드</p>
+                        <p class="sofa_name">감각적인 소파</p>
+                        <p class="sofa_price">267,000 원</p>
+                        <button class="sofa_more_btn">MORE VIEW</button>
+                    </li>
+                </ul>
+            </div>
+            <button id="sofa_prev_btn"><img src="/furniture/images/intro_prev_btn.png" alt="이전"></button>
+            <button id="sofa_next_btn"><img src="/furniture/images/intro_next_btn.png" alt="다음"></button>
+        </div>
+    </section>
+    <section id="banner_02">
+        <p id="banner_02_brand">돌첸가빈</p>
+        <p id="banner_02_title">나만의 주방 시스템</p>
+        <p id="banner_02_text">주방 가구, 용품을 최대 58% 할인된 가격으로 만나보실 수 있습니다</p>
+        <button id="banner_02_btn">MORE VIEW</button>
+    </section>
+    <section id="best">
+        <h2>Best Products</h2>
+        <div id="best_tab">
+            <ul id="best_tab_list">
+                <li class="selected"><a href="#">ALL</a></li>
+                <li><a href="#">침실가구</a></li>
+                <li><a href="#">거실가구</a></li>
+                <li><a href="#">주방가구</a></li>
+                <li><a href="#">서재가구</a></li>
+                <li><a href="#">유아/키즈</a></li>
+                <li><a href="#">옷장/수납장</a></li>
+                <li><a href="#">홈인테리어</a></li>
+            </ul>
+        </div>
+        <div id="best_item">
+            <!--data-->
+        </div>
+        <button id="best_prev_btn"><img src="/furniture/images/intro_prev_btn.png" alt="이전"></button>
+        <button id="best_next_btn"><img src="/furniture/images/intro_next_btn.png" alt="다음"></button>
+    </section>
+    <section id="showroom">
+        <div class="showroom_bg"></div>
+        <h2>ONLINE-SHOWROOM</h2>
+        <div id="film">
+            <ul id="showroom_img_list">
+                <li class="film_selected"><img src="/furniture/images/showroom_thum_00.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_01.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_02.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_03.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_04.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_05.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_06.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_07.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_08.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_09.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_10.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_11.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_12.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_13.jpg" alt="쇼룸"></li>
+                <li><img src="/furniture/images/showroom_thum_14.jpg" alt="쇼룸"></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <h2 class="hidden">하단영역</h2>
+        <div id="company_info_wrap">
+            <p id="company_logo"><img src="/furniture/images/footer_logo.png" alt="furniture"></p>
+            <p id="company_info">서울특별시 중구 세종대로 110 | 대표이사 : 김찬찬 <br>사업자등록번호 111-80-33113 | 통신판매업신고 2023-서울강남-00011
+            <button>사업자확인</button></p>
+            <p id="copyright">Copyrightⓒ FURNITURE Corporation. All Rights Reserved.</p>
+        </div>
+        <div id="company_menu">
+            <ul id="company_menu_list">
+                <li><a href="#">회사소개</a>
+                    <ul id="company_sub_menu_list">
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">관리방침</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">위치정보이용약관</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">고객지원</a>
+                    <ul id="company_sub_menu_list">
+                        <li><a href="#">자주묻는질문</a></li>
+                        <li><a href="#">1:1문의</a></li>
+                        <li><a href="#">교환반품안내</a></li>
+                        <li><a href="#">대량구매</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">이용가이드</a>
+                    <ul id="company_sub_menu_list">
+                        <li><a href="#">브랜드스토리</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">협찬문의</a></li>
+                        <li><a href="#">매장찾기</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="company_help">
+            <p id="company_help_text">고객센터</p>
+            <p id="company_number">1555-2222</p>
+            <p id="company_time">상담가능시간 10:00 ~ 16:00</p>
+        </div>
+    </footer>
+    <div class="scrollbar">
+        <div class="scrollbar_thumb"></div>
+    </div>
+	
+    </body>
+    </html>

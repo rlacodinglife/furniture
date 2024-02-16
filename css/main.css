@@ -1,0 +1,1023 @@
+/*visual*/
+section#visual{
+    min-width: 1200px;
+    width: 100%;
+    height: 1080px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+ul#visual_list{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0px;
+    top:0px; 
+    overflow: hidden;
+}
+ul#visual_list>li{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0px;
+    top:0px; 
+}
+ul#visual_list>li:nth-child(1){
+    background: url(/furniture/images/main_visual_00.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(2){
+    background: url(/furniture/images/main_visual_01.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(3){
+    background: url(/furniture/images/main_visual_02.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(4){
+    background: url(/furniture/images/main_visual_03.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(5){
+    background: url(/furniture/images/main_visual_04.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(6){
+    background: url(/furniture/images/main_visual_05.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(7){
+    background: url(/furniture/images/main_visual_06.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(8){
+    background: url(/furniture/images/main_visual_07.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(9){
+    background: url(/furniture/images/main_visual_08.jpg) no-repeat center center;
+    background-size: cover;
+}
+ul#visual_list>li:nth-child(10){
+    background: url(/furniture/images/main_visual_09.jpg) no-repeat center center;
+    background-size: cover;
+}
+p.visual_brand{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 124px;
+    color: #eee;
+}
+p.visual_title{
+    font-size: 56px;
+    font-weight: 200;
+    color: #E0DBDB;
+    padding-top:650px;
+    padding-left: 6.25%;
+}
+p.visual_text{
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #E0DBDB;
+    margin-top: 16px;
+    padding-left: 6.25%;
+}
+button.visual_btn{
+    width: 200px;
+    height: 50px;
+    border: solid 1px #E0DBDB;
+    box-sizing: border-box;
+    color: #E0DBDB;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    background: none;
+    margin-left: 6.25%;
+    margin-top: 80px;
+}
+button#visual_prev_btn,button#visual_next_btn{
+    background: none;
+    border: none;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    line-height: 50vh;
+    color: #aaa;
+    font-size: 24px;
+}
+button#visual_prev_btn{
+    left: 0;
+}
+button#visual_next_btn{
+    right: 0;
+}
+button#visual_prev_btn:hover,button#visual_next_btn:hover{
+    color: #eee;
+    background-color: rgba(255,255,255,0.04);
+}
+div#visual_bar{
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 40px;
+    width: 300px;
+    height: 2px;
+    background-color: #aaa;
+}
+div#visual_bar>span{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 10%;
+    background-color: #fff;
+}
+div#visual_bar>p#visual_first_index{
+    position: absolute;
+    left: -21px;
+    bottom: 0;
+    color: #eee;
+    font-size: 14px;
+}
+div#visual_bar>p#visual_last_index{
+    position: absolute;
+    right: -27px;
+    bottom: 0;
+    color: #eee;
+    font-size: 14px;
+}
+/*intro*/
+section#intro{
+    background-color: #fcfcfc;
+    width: 100%;
+    height: 1080px;
+    min-width: 1200px;
+    border-bottom: solid 1px #333;
+    /* padding: 160px 250px; */
+    box-sizing: border-box;
+}
+div#intro_tabmenu_wrap{
+    width: 40%;
+    height: 50px;
+    padding-top: 120px;
+    margin-left: 13%;
+}
+ul#intro_tabmenu_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+ul#intro_tabmenu_list>li>a{
+    font-size: 32px;
+    font-weight: 200;
+    text-align: center;
+    line-height: 50px;
+    color: #aaa;
+    
+}
+ul#intro_tabmenu_list>li.selected>a{
+    color: #111;
+    font-weight: 500;
+    border-bottom: solid 2px #111;
+    /* transition: 0.1s; */
+}
+div#intro_panel_wrap{
+    width: 71%;
+    height:600px;
+    margin-left: 13%;
+    margin-top: 100px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+div#intro_data{
+    width: 100%;
+    height: 100%;
+}
+p.intro_panel_title{
+    width: 55%;
+    height: 150px;
+    font-size: 56px;
+    font-weight: 200;
+    line-height: 150%;
+    padding-top: 50px;
+    color: #111;
+}
+p.intro_panel_text{
+    width: 48%;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #666;
+    line-height: 150%;
+    margin-top: 24px;
+}
+button.intro_panel_btn{
+    background: none;
+    border: solid 1px #aaa;
+    color: #111;
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 200;
+}
+div.intro_slide_wrap{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 600px;
+}
+ul.intro_slide_list{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+ul.intro_slide_list>li{
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+ul.intro_slide_list>li>img{
+    width: 100%;
+}
+p#intro_index{
+    width: 68px;
+    height: 25px;
+    position: absolute;
+    right: -120px;
+    top: 223px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #111;
+}
+p#intro_index>span{
+    font-weight: 700;
+}
+button#intro_prev_btn,button#intro_next_btn{
+    width: 32px;
+    height: 60px;
+    position: absolute;
+    background: none;
+    border: none;
+    top: 200px;
+}
+button#intro_prev_btn{
+    left: -150px;
+}
+button#intro_next_btn{
+    right: -175px;
+}
+/*banner 00*/
+section#banner_00{
+    width: 100%;
+    min-width: 1200px;
+    height: 1080px;
+    background: url(/furniture/images/banner_00.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    border-top: solid 1px #333;
+    border-bottom: solid 1px #333;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+    top:0;
+}
+p.banner_brand{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 6.25%;
+    color: #eee;
+    padding-top:650px;
+}
+p.banner_title{
+    font-size: 56px;
+    font-weight: 200;
+    color: #eee;
+    margin-top: 8px;
+    padding-left: 6.25%;
+}
+p.banner_text{
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #eee;
+    margin-top: 16px;
+    padding-left: 6.25%;
+}
+button#banner_00_btn{
+    width: 200px;
+    height: 50px;
+    border: solid 1px #E0DBDB;
+    box-sizing: border-box;
+    color: #E0DBDB;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    background: none;
+    margin-left: 6.25%;
+    margin-top: 80px;
+}
+section#banner_01{
+    width: 100%;
+    height: 100vh;
+    min-width: 1200px;
+    background: url(/furniture/images/banner_01.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+}
+
+section#banner_01>img{  
+    display: block;
+    position: absolute;
+    top: 50vh;
+    margin-top: -148px;
+    left: 1800px;
+}
+/*매거진*/
+section#magazine{    
+    width: 100%;
+    height: 2700px;
+    min-width: 1200px;
+    background-color: #222;
+    padding-top: 300px;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+div#magazine_text_wrap{
+    width: 43%;
+    height: 1000px;
+    margin-left: 4%;
+    float: left;
+}
+div#magazine_text_wrap>p{
+    line-height: 150%;
+}
+p#magazine_brand{
+    font-size: 30px;
+    font-weight: 500;
+    color: #ccc;
+}
+p#magazine_title{
+    font-size: 72px;
+    font-family: 600;
+    margin-top: 8px;
+    letter-spacing: -1px;
+    color: #555;
+}
+p#magazine_text{
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: 12px;
+    color: #555;
+}
+p#magazine_img_00{
+    float: right;
+    margin-right: 60px;
+    width: 45%;
+}
+p#magazine_img_00>img,p#magazine_img_01>img{
+    width: 100%;
+}
+p#magazine_img_01{
+    position: absolute;
+    bottom: 300px;
+    left: 60px;
+    width: 75%;
+}
+p#magazine_comment{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    width: 1400px;
+    height: 180px;
+    line-height: 150%;
+    color: #ccc;
+    position: absolute;
+    left: 50%;
+    margin-left: -700px;
+    bottom: 0px;
+}
+/*콜렉션*/
+section#collection{
+    width: 100%;
+    height: 1080px;
+    min-width: 1200px;
+    background-color: #222;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+    border-bottom: solid 1px #333;
+}
+div#collection_text{
+    width: 250px;
+    height: 300px;
+    /* margin-left: 200px; */
+    /* padding-top: 400px; */
+}
+section#collection>p.banner_brand{
+    padding-top: 400px;
+}
+p.collection_title{
+    color: #eee;
+    font-size: 48px;
+    line-height: 130%;
+    font-weight: 600;
+    margin-left: 6.25%;
+}
+div#collection_inner{
+    min-height: 2000px;
+    width: 52%;
+    position: absolute;
+    right: 10%;
+    top: -145%;
+}
+div.collection_img{
+    width: 48%;
+}
+div.collection_img>img{
+    display: block;
+    width: 100%;
+    margin-bottom: 32px;
+}
+div#collection_img_left{
+    position: absolute;
+    left: 0;
+    top: -5%;
+}
+div#collection_img_right{
+    position: absolute;
+    right: 0;
+    top: 75%;
+}
+/*desinger*/
+section#designer{
+    width: 100%;
+    height: 1080px;
+    min-width: 1200px;
+    /* background-color: #222; */
+    padding-top: 320px;
+    box-sizing: border-box;
+    border-top: solid 1px #333;
+    border-bottom: solid 1px #333;
+    /* transform: translateY(-1080px); */
+    margin-top: -1080px;
+}
+div.designer_inner{
+    width: 65%;/*1250*/
+    height: 70px;
+    margin-left: 24%;
+    margin-bottom: 160px;
+}
+
+p.designer_text{
+    width: 11%;
+    height: 38px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 300;
+    float: left;
+}
+p.designer_title{
+    width: 42%;
+    height: auto;
+    font-size: 64px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 15%;
+    float: left;
+}
+svg.desinger_arrow{
+    margin-top: 20px;
+    float: right;
+    stroke-dasharray: 280;
+}
+
+@-webkit-keyframes arrow_ani{
+    0%{
+        stroke-dashoffset: 280;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+div.designer_inner:hover svg.desinger_arrow path{
+    -webkit-animation: arrow_ani 0.3s ease-out 0.3s;
+}
+
+div.designer_inner:hover p.designer_title{
+    transform-origin:50% 50%;
+    -moz-transform-origin:50% 50%;
+    animation: flip_top 1s forwards;
+}
+
+
+@keyframes flip_top {
+    0% {transform: perspective(500px) rotateX(0deg)}
+    100% {transform:perspective(500px) rotateX(360deg)}
+}
+
+/*sofa 슬라이드*/
+section#sofa{
+    width: 100%;
+    height: 1080px;
+    background-color: #fcfcfc;
+}
+div#sofa_banner{
+    width: 50%;
+    height: 100%;
+    float: left;
+    background: url(/furniture/images/sofa_banner.jpg) no-repeat center center;
+    background-size: cover;
+}
+p#sofa_banner_title{
+    width: 75%;
+    /* height: 50px; */
+    margin-left: 12.5%;
+    padding-top: 800px;
+    font-size: 52px;
+    color: #eee;
+    font-weight: 200;
+}
+p#sofa_banner_text{
+    width: 60%;
+    margin-left: 12.5%;
+    font-size: 18px;
+    color: #eee;
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 150%;
+}
+div#sofa_inner{
+    width: 50%;
+    height: 100%;
+    float: right;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+div#sofa_img_wrap{
+    width: 100%;
+    height: 1080px;
+    margin: 0 auto;
+    padding-top: 160px;
+    box-sizing: border-box;
+}
+ul#sofa_img_list{
+    width: 100%;
+    height: 860px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+ul#sofa_img_list li{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+p.sofa_img{
+    width: 100%;
+    height: 650px;
+    text-align: center;
+    overflow: hidden;
+}
+/* p.sofa_img>img{
+    width: 100%;
+} */
+p.sofa_brand{
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    text-align: center;
+}
+p.sofa_name{
+    color: #767676;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 8px;
+}
+p.sofa_price{
+    font-weight: 500;
+    color: #111;
+    margin-top: 16px;
+    text-align: center;
+}
+button.sofa_more_btn{
+    text-align: center;
+    display: block;
+    clear: both;
+    width: 200px;
+    height: 60px;
+    border: none;
+    background: none;
+    color: #111;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-top: 60px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+button.sofa_more_btn::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    bottom: 3px;
+    width: 150px;
+    height: 2px;
+    background-color: #111;
+    transition: 0.5s;
+    transform: scale(0,1);
+}
+button.sofa_more_btn:hover::after{
+    transform: scale(1,1);
+}
+button#sofa_prev_btn,button#sofa_next_btn{
+    position: absolute;
+    border: none;
+    background: none;
+    top: 450px;
+}
+button#sofa_prev_btn{
+    left: 5%;
+}
+button#sofa_next_btn{
+    right:5%;
+}
+
+/*banner02*/
+section#banner_02{
+    width: 100%;
+    min-width: 1200px;
+    height: 1080px;
+    background: url(/furniture/images/banner_02.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    border-top: solid 1px #333;
+    /* border-bottom: solid 1px #333; */
+    box-sizing: border-box;
+    position:relative;
+    left:0px;
+    top:0px; 
+}
+
+
+p#banner_02_brand{
+    font-size: 18px;
+    font-weight: 500;
+    color: #eee;
+    text-align: center;
+    padding-top:750px;
+}
+p#banner_02_title{
+    font-size: 56px;
+    font-weight: 200;
+    color: #eee;
+    margin-top: 8px;
+    text-align: center;
+}
+p#banner_02_text{
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #eee;
+    margin-top: 16px;
+    text-align: center;
+}
+button#banner_02_btn{
+    display: block;
+    width: 200px;
+    height: 50px;
+    border: solid 1px #E0DBDB;
+    box-sizing: border-box;
+    color: #E0DBDB;
+    font-size: 20px;
+    font-weight: 500;
+    background: none;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+/*best*/
+section#best{
+    width: 100%;
+    height: 1080px;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+    border-top: solid 1px #333;
+    border-bottom: solid 1px #333;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+section#best>h2{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+    margin-top: 140px;
+}
+div#best_tab{
+    width: 47%;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+ul#best_tab_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+ul#best_tab_list>li>a{
+    color: #aaa;
+    font-weight: 600;
+}
+ul#best_tab_list>li.selected>a{
+    color: #111;
+    border-bottom: solid 2px #111;
+    padding-bottom: 4px;
+}
+div#best_item{
+    width: 76.5%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 120px;
+    overflow: hidden;
+}
+ul.best_item_list{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+ul.best_item_list>li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+div.best_inner{
+    width: 32%;
+    float: left;
+    height: 100%;
+    margin-right: 1%;
+}
+p.best_img{
+    width: 100%;
+    text-align: center;
+}
+p.best_img>img{
+    width: 100%;
+}
+p.best_brand{
+    width: 100%;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    text-align: center;
+}
+p.best_name{
+    width: 100%;
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #767676;
+    text-align: center;
+}
+p.best_price{
+    text-align: center;
+    margin-top: 16px;
+    font-size: 20px;
+    color: #111;
+    font-weight: 500;
+}
+button#best_prev_btn,button#best_next_btn{
+    position: absolute;
+    top: 50%;
+    border: none;
+    background: none;
+}
+button#best_prev_btn{
+    left: 3.3%;
+}
+button#best_next_btn{
+    right: 3.3%;
+}
+/*쇼룸*/
+section#showroom{
+    width: 100%;
+    height: 1080px;
+    /* background: url(/furniture/images/showroom_00.jpg) no-repeat center center; */
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+div.showroom_bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(/furniture/images/showroom_0.jpg) no-repeat center center;
+    background-size: cover;
+
+}
+section#showroom>h2{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    color: #111;
+    font-size: 76px;
+    font-weight: 600;
+    text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 white, 2px 2px 0 white;
+    padding-top: 60px;
+    margin-left: 60px;
+}
+div#film{
+    z-index: 2;
+    width: 150px;
+    height: 2243px;
+    background: url(/furniture/images/film.png) no-repeat;
+    border-top: solid 7px #111;
+    border-bottom: solid 7px #111;
+    position: absolute;
+    top: 0;
+    right: 4%;
+}
+ul#showroom_img_list{
+    width: 102px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: black;
+}
+ul#showroom_img_list li{
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border-bottom: solid 7px #111;
+    overflow: hidden;
+    text-align: center;
+    opacity: 0.3;
+}
+ul#showroom_img_list li:hover{
+    opacity: 0.9;
+}
+ul#showroom_img_list li.film_selected{
+    opacity: 1;
+}
+ul#showroom_img_list li>img{
+    height: 100%;
+}
+
+
+/*footer*/
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #111;
+}
+div#company_info_wrap{
+    width: 46%;
+    height: 100%;
+    padding-left: 10%;
+    padding-top: 35px;
+    box-sizing: border-box;
+    float: left;
+}
+p#company_info{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 150%;
+}
+p#company_info>button{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 300;
+    margin-left: 10px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+p#copyright{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 300;
+    margin-top: 30px;
+    line-height: 150%;
+}
+div#company_menu{
+    width: 30%;
+    height: 100%;
+    padding-top: 35px;
+    padding-left: 3%;
+    box-sizing: border-box;
+    float: left;
+    border-left: solid 1px #333;
+    border-right: solid 1px #333;
+}
+ul#company_menu_list{
+    width: 100%;
+    height: 100%;
+}
+ul#company_menu_list>li{
+    width: 90px;
+    height: 100px;
+    float: left;
+    margin-bottom: 6px;
+    margin-right: 8%;
+}
+ul#company_menu_list>li>a{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: bold;
+}
+ul#company_sub_menu_list{
+    width: 100%;
+    height: 100%;
+}
+ul#company_sub_menu_list>li{
+    margin-top: 6px;
+}
+ul#company_sub_menu_list>li>a{
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 400;
+}
+div#company_help{
+    width: 23%;
+    float: left;
+    height: 100%;
+    padding-left: 3%;
+    padding-top: 35px;
+    box-sizing: border-box;
+}
+div#company_help p{
+    color: #eee;
+    font-size: 12px;
+    font-weight: 400;
+}
+div#company_help p#company_number{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+
+
+@media screen and (max-width:1700px){
+    p.designer_title{
+        width: 50%;
+        font-size: 48px;
+        margin-left: 12%;
+    }
+    svg.desinger_arrow{
+        width: 200px;
+    }
+    
+}
+
+@media screen and (max-width:1400px){
+    p#magazine_comment{
+        width: 1100px;
+        font-size: 24px;
+        margin-left: -550px;
+    }
+    
+}
+

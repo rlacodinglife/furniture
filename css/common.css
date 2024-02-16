@@ -1,0 +1,484 @@
+/*기본 설정*/
+body,html{
+    height: 100%;
+    width: 100%;
+}
+html{
+    scrollbar-gutter: stable;
+}
+body{
+    overflow: overlay;
+    font-family: 'pretendard';
+    color: #111;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: transparent !important; 
+    /* display: none; */
+}
+body::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgb(0 0 0 / 30%) !important;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+}
+body::-webkit-scrollbar-thumb:hover{
+    
+}
+body::-webkit-scrollbar-track{
+    /* width: 1000px; */
+	background-color: rgb(0 0 0 / 0%) !important; /* 스크롤바 뒷 배경을 투명 처리한다 */
+}
+.scrollbar{
+    position: fixed;
+    width: 10px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 300;
+}
+.scrollbar_thumb{
+    height: 100px;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 73.123, 0, 1) rotate(0.001deg);
+    /* transform: translateY(0); */
+    position: absolute;
+    border-radius: 20px;
+    width: 6px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #eeeeee70;
+    display: none;
+}
+.scrollbar_thumb::before{
+    /* content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% -4px);
+    top: 50%;
+    left: 0;
+    background-color: #aaa;
+    border-radius: 4px;
+    transform: translateY(-50%); */
+}
+
+a{
+    text-decoration: none;
+    color: #111;
+}
+button{
+    cursor: pointer;
+}
+.hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    line-height: 0px;
+    font-size: 0px;
+}
+.is-flex{
+    display: flex;
+}
+.is-grid{
+    display: grid;
+}
+/*skipmenu*/
+ul#skipmenu_list li a:focus{
+    width: 100%;
+    height: 30px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    z-index: 9999999999;
+}
+/*header*/
+header{
+    width: 100%;
+    min-width: 1200px;
+    height: 70px;
+    background-color: rgb(41, 41, 41,0.3);
+    border-bottom: solid 1px #666;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+h1{
+    width: 20%;
+    height: 70px;
+    line-height: 80px;
+    margin-left: 5.729%;
+    border-right: solid 1px #666;
+    box-sizing: border-box;
+    float: left;
+}
+button#menu_btn{
+    background:none;
+    border: none;
+    color: #eee;
+    font-size: 22px;
+    position: absolute;
+    top: 23px;
+    left: 3.125%;
+}
+nav#mainmenu{
+    width: 55%;
+    height: 100%;
+    padding-left: 40px;
+    box-sizing: border-box;
+    float: left;
+    border-right: solid 1px #666;
+}
+ul#mainmenu_list{
+    width: 59%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-items: center;
+}
+ul#mainmenu_list>li>a{
+    font-weight: 500;
+    line-height: 70px;
+    color: #eee;
+}
+ul#mainmenu_list>li>a:hover{
+    color: #aaa;
+}
+nav#mymenu{
+    width: 10% ;
+    height: 100%;
+    padding: 0 1.5%;
+    border-right: solid 1px #666;
+    float: left;
+    box-sizing: border-box;
+}
+ul#mymenu_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+ul#mymenu_list li>a{
+    display: block;
+    width: 25px;
+}
+ul#mymenu_list li>a>img{
+    width: 100%;
+}
+div#language{
+    width: 5%;
+    float: right;
+    height: 100%;
+    margin-right: 2%;
+}
+ul#language_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+ul#language_list>li{
+    color: #666;
+    font-size: 14px;
+}
+ul#language_list>li>a{
+    color: #666;
+    font-size: 14px;
+}
+ul#language_list>li:first-child>a{
+    color: #eee;
+    font-weight: bold;
+}
+ul#language_list>li:nth-child(2)>a{
+    font-size: 8px;
+}
+/*전체메뉴*/
+nav#item_menu{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+button#item_close_btn{
+    background:none;
+    border: none;
+    color: #eee;
+    font-size: 26px;
+    position: absolute;
+    top: 23px;
+    left: 3.125%;
+}
+ul#item_menu_list{
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ul#item_menu_list>li>a{
+    color: #ccc;
+    font-weight: 500;
+    display:block;
+    width:100%;
+    height:auto;
+}
+ul#item_menu_list>li{
+    text-align: center;
+    width: 10%;
+    line-height: 70px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+ul#item_menu_list>li>a::before{
+    content:'';
+	display:block;
+	width : 80px;
+    height:1px;
+    background:#ccc;
+	position:absolute;
+    left:50%;
+    margin-left:-40px;
+    top:60px;
+    transform:scale(0,1);
+	transition:0.5s ease-out;
+}
+ul#item_menu_list>li.selected>a{
+    color: #eee;
+    font-weight: bold;
+    transition: 0.5s ease-out;    
+}
+ul#item_menu_list>li.selected>a::before{
+    transform:scale(1,1);
+	
+}
+ul.item_submenu_list{
+    width: 100%;
+    height: 100%;
+}
+ul.item_submenu_list>li{
+    position: relative;
+    left: 0;
+    top: 0;
+    line-height: 40px;
+}
+ul.item_submenu_list>li>a{
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    color: #ccc;
+    font-weight: 500;
+}
+ul.item_submenu_list>li>a:hover{
+    color: #eee;
+    font-weight: 700;
+}
+/* ul.item_submenu_list>li>a::before{
+    content:'';
+	display:block;
+	width : 80px;
+    height:1px;
+    background:#ccc;
+	position:absolute;
+    left:50%;
+    margin-left:-40px;
+    bottom:0px;
+	transform:scale(0,1);
+	transition:0.5s ease-out;
+}
+ul.item_submenu_list>li>a:hover::before{
+    transform:scale(1, 1)
+} */
+/*search*/
+div#search{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0,0.7);
+}
+div#search>form{
+    width: 26%;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 400px;
+    border-bottom: solid 2px #eee;
+    background: none;
+    font-size: 20px;
+    font-weight: 200;
+}
+input#search_bar{
+    width: 90%;
+    height: 50px;
+    border: none;
+    background: none;
+    text-indent: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #eee;
+}
+input#search_bar::placeholder {
+    color: #eee;
+    opacity: 1; /* Firefox */
+}
+  
+input#search_bar::-ms-input-placeholder { /* Edge 12 -18 */
+    color: #eee;
+}
+button#search_btn{
+    background: none;
+    border: none;
+    width: 9%;
+    padding: 10px 0;
+    float: right;
+    display: block;
+}
+div#search_inner{
+    width: 26%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 18px;
+}
+ul#tag_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+ul#tag_list>li{
+    margin-right: 20px;
+}
+ul#tag_list>li>a{
+    font-weight: 200;
+    color: #eee;
+}
+button#search_close_btn{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background:none;
+    border: none;
+}
+
+
+/*footer*/
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #111;
+}
+div#company_info_wrap{
+    width: 46%;
+    height: 100%;
+    padding-left: 10%;
+    padding-top: 35px;
+    box-sizing: border-box;
+    float: left;
+}
+p#company_info{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 150%;
+}
+p#company_info>button{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 300;
+    margin-left: 10px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+p#copyright{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 300;
+    margin-top: 30px;
+    line-height: 150%;
+}
+div#company_menu{
+    width: 30%;
+    height: 100%;
+    padding-top: 35px;
+    padding-left: 3%;
+    box-sizing: border-box;
+    float: left;
+    border-left: solid 1px #333;
+    border-right: solid 1px #333;
+}
+ul#company_menu_list{
+    width: 100%;
+    height: 100%;
+}
+ul#company_menu_list>li{
+    width: 90px;
+    height: 100px;
+    float: left;
+    margin-bottom: 6px;
+    margin-right: 8%;
+}
+ul#company_menu_list>li>a{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: bold;
+}
+ul#company_sub_menu_list{
+    width: 100%;
+    height: 100%;
+}
+ul#company_sub_menu_list>li{
+    margin-top: 6px;
+}
+ul#company_sub_menu_list>li>a{
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 400;
+}
+div#company_help{
+    width: 23%;
+    float: left;
+    height: 100%;
+    padding-left: 3%;
+    padding-top: 35px;
+    box-sizing: border-box;
+}
+div#company_help p{
+    color: #eee;
+    font-size: 12px;
+    font-weight: 400;
+}
+div#company_help p#company_number{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 8px 0;
+}

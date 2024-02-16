@@ -1,0 +1,302 @@
+/*visual*/
+section#visual{
+    width: 100%;
+    height: 420px;
+    background: url(/furniture/best/images/best_visual.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: center;
+}
+section#visual>h2{
+    font-size: 64px;
+    color: #eee;
+    font-weight: 500;
+}
+/*product*/
+section#product{
+    width: 100%;
+    height: auto;
+    background-color: #fcfcfc;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+div#category{
+    margin: 0 auto;
+    width: 84%;
+    height: 40px;
+    justify-content: space-between;
+    border-bottom: solid 1px #ccc;
+}
+div#left_contents{
+    width: 40%;
+    height: 100%;
+}
+div#left_contents>span{
+    font-weight: 600;
+    color: #111;
+}
+div#left_contents>span::after{
+    content: '|';
+    color: #aaa;
+    margin: 0 12px;
+}
+ul#left_contents_list{
+    width: 80%;
+    justify-content: space-between;
+}
+ul#left_contents_list li{
+    color: #111;
+}
+ul#left_contents_list li.selected{
+    font-weight: bold;
+}
+button#filter_btn{
+    width: 68px;
+    height: 20px;
+    background: none;
+    border: none;
+    color: #111;
+    text-align: left;
+    position: relative;
+    left: 0;
+    top: -2px;
+}
+button#filter_btn>span{
+    width: 32px;
+    margin-left: 4px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 16px;
+    font-family: 'pretendard';
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+div#filter_wrap{
+    width: 84%;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 14px;
+}
+div#filter_wrap p#reset{
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+}
+p#reset>a>span{
+    margin-left: 8px;
+}
+div#product_inner{
+    width: 84.375%;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 120px;
+}
+ul#product_list{
+    width: 100%;
+    height: 100%;
+    grid-gap: 3.7%;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr;
+    grid-template-columns: repeat(4,1fr);
+
+}
+ul#product_list>li{
+    width: 100%;
+    height: 100%;
+}
+p.product_img>img{
+    width: 100%;
+}
+p.product_brand{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    margin-top: 32px;
+}
+p.product_name{
+    color: #767676;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 8px;
+    text-align: center;
+}
+p.product_price{
+    text-align: center;
+    color: #111;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 12px;
+}
+div#page{
+    width: 320px;
+    height: 20px;
+    margin: 0 auto;
+}
+ul#page_list{
+    justify-content: space-between;
+}
+ul#page_list>li>a{
+    color: #aaa;
+    font-size: 16px;
+    font-weight: 400;
+}
+ul#page_list>li.selected>a{
+    font-weight: 500;
+    color: #111;
+    border-bottom: solid 2px #111;
+}
+
+div.gray_bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 88888;
+    /* display: none; */
+}
+div#filter{
+    /* display: none; */
+    width: 450px;
+    height: 400%;
+    background-color: #fcfcfc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999999;
+}
+ul#category_list>li>span{
+    color: #767676;
+    font-weight: 400;
+}
+div#filter input.checkbox {
+    display: none;
+}
+/*input 바로 다음의 label*/
+div#filter input.checkbox + label{
+    cursor:pointer;
+}
+
+div#filter input.checkbox + label::before{
+    display: block;
+    width: 20px;
+    height: 20px;
+    /* border:2px solid #ccc; */
+    position: relative;
+    right: 0;
+    top: 10px;
+    margin: 0;
+    content:"";
+    background-image:url("/furniture/best/images/checkbox.png");
+  }
+div#filter input[class="checkbox"]:checked + label::before{
+	background-image:url("/furniture/best/images/checkbox_checked.png");
+}  
+
+ul#filter_list{
+    width: 100%;
+    height: auto;
+}
+ul#filter_list>li{
+    box-sizing: border-box;
+}
+ul#filter_list>li::after{
+    content: '';
+    display: block;
+    width: 390px;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 auto;
+}
+ul#filter_list>li>a>span{
+    font-size: 18px;
+    font-weight: 600;
+    text-indent: 40px;
+    color: #111;
+}
+ul#filter_list>li>a{
+    line-height: 60px;
+    justify-content: space-between;
+}
+ul#filter_list>li>a>svg{
+    margin-right: 30px;
+    margin-top: 25px;
+    transition: .3s;
+}
+div#filter>ul>li.selected>a>svg{
+    transform: rotate(180deg);
+}
+ul#filter_list>li>ul>li{
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0 30px 0 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+}
+ul#filter_list>li>ul>li:last-child{
+    height: 60px;
+}
+ul#filter_list>li>ul>li.is-flex{
+    justify-content: space-between;
+    
+}
+
+ul#brand_list>li:first-child{
+    height: 60px;
+    padding-top: 10px;
+}
+ul#brand_list>li:first-child input{
+    height: 40px;
+    width: 280px;
+    border: solid 1px #ccc;
+    font-size: 14px;
+    font-weight: 400;
+    text-indent: 20px;
+    font-family: 'pretendard';
+    box-sizing: border-box;
+}
+ul#brand_list>li:first-child>button{
+    background:none;
+    height: 40px;
+    font-family: 'pretendard';
+    width: 90px;
+    border: solid 1px #111;
+    box-sizing: border-box;
+    
+}
+div#price_wrap{
+    width: 380px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 20px 30px 20px 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'pretendard';
+    color: #ccc;
+}
+div#price_wrap>input{
+    width: 140px;
+    height: 40px;
+    border-radius: 0;
+    border: solid 1px #ccc;
+}
+input::placeholder{
+    font-family: 'pretendard';
+    color: #ccc;
+    font-weight: 200;
+    font-size: 14px;
+    text-indent: 12px;
+}
